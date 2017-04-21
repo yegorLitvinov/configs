@@ -21,6 +21,6 @@ sudo apt install -y vim \
 	libssl-dev 
 
 sudo usermod -s /bin/zsh `whoami`
-echo 'source /usr/share/virtualenvwrapper/virtualenvwrapper.sh' >> ~/.zshrc
+# echo 'source /usr/share/virtualenvwrapper/virtualenvwrapper.sh' >> ~/.zshrc
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
