@@ -16,7 +16,9 @@ sudo apt install -y vim \
 	libxslt-dev \
 	python-dev \
 	chromium-browser \
-	chromium-chromedriver
+	chromium-chromedriver \
+	build-essential \
+	libssl-dev 
 
 sudo usermod -s /bin/zsh `whoami`
 echo 'source /usr/share/virtualenvwrapper/virtualenvwrapper.sh' >> ~/.zshrc
