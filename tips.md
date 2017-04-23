@@ -3,6 +3,9 @@
 ## No driver for your GPU
 To turn of GPU, add `amdgpu.runpm=0` to `/etc/default/grub` like this:
 GRUB_CMDLINE_LINUX_DEFAULT="quiet splash amdgpu.runpm=0"
+```bash
+sudo update-grub
+```
 
 ## Audio not working
 ```bash
