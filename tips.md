@@ -2,10 +2,13 @@
 
 ## No driver for your GPU
 To turn of GPU, add `amdgpu.runpm=0` to `/etc/default/grub` like this:
-GRUB_CMDLINE_LINUX_DEFAULT="quiet splash amdgpu.runpm=0"
+`GRUB_CMDLINE_LINUX_DEFAULT="quiet splash amdgpu.runpm=0"`
 ```bash
 sudo update-grub
 ```
+
+## Black screen after sleep
+Make sure, that no `radeon.runpm=0` in  `/etc/default/grub`
 
 ## Audio not working
 ```bash
