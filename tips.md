@@ -1,5 +1,6 @@
 # Some tips
 
+
 ## No driver for your GPU
 To turn of GPU, add `amdgpu.runpm=0` to `/etc/default/grub` like this:
 `GRUB_CMDLINE_LINUX_DEFAULT="quiet splash amdgpu.runpm=0"`
@@ -7,8 +8,10 @@ To turn of GPU, add `amdgpu.runpm=0` to `/etc/default/grub` like this:
 sudo update-grub
 ```
 
+
 ## Black screen after sleep
 Make sure, that no `radeon.runpm=0` in  `/etc/default/grub`
+
 
 ## Audio not working
 ```bash
@@ -22,5 +25,36 @@ than put in `/etc/modprobe.d/whatever.conf` next lines:
 ```
 options snd-hda-intel single_cmd=1
 options snd-hda-intel probe_mask=1
+```
+
+## Virtualenvwrapper
+```bash
+echo 'source /usr/share/virtualenvwrapper/virtualenvwrapper.sh' >> ~/.zshrc
+WD=/path/to/project/
+cd $WD 
+export DJANGO_SETTINGS_MODULE=config.settings.dev
+export PYTHONPATH="$WD/somepythonpath"
+```
+
+## Alias for server. Copy into `~/.ssh/config`
+```
+Host somehost
+   HostName www.somehost.com
+   User egor
+   IdentityFile ~/.ssh/keys/somehost_private_key
+```
+Now you cat access to the server by typing `ssh somehost`. 
+Not forget to add your public key to the host first.
+
+
+## Some postgres tips
+```bash
+sudo -u postgres psql
+```
+```sql
+create user egor with password '1234';
+create database egor owner egor;
+create database project_dev owner egor;
+ALTER USER myuser WITH SUPERUSER;
 ```
 
