@@ -46,4 +46,5 @@ sudo npm install -g yarn
 echo 'GOVERNOR="powersave"' | sudo tee /etc/default/cpufrequtils
 
 git config --global push.default simple
+git config --global core.editor vim
 
