@@ -1,0 +1,97 @@
+# TODO: test this all
+- hosts: localhost
+  vars:
+    username: 'egor'
+  tasks:
+
+  - name: Add python3.6 repo
+    sudo: yes
+    apt_repository:
+      repo: 'ppa:jonathonf/python-3.6'
+      codename: 'xenial'
+    tags:
+      - python3.6
+
+  - name: Add nodejs repo (apt update automatically)
+    sudo: yes
+    shell: curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+    tags:
+      - nodejs6
+
+  - name: Update apt cache
+    sudo: yes
+    action: apt update_cache=yes
+
+  - name: Install utils packages
+    sudo: yes
+    action: apt name={{ item }}
+    with_items:
+      - vim
+      - htop
+      - iotop
+      - zsh
+      - terminator
+      - chromium-browser
+      - indicator-cpufreq
+      - curl
+      - wget
+
+  - name: Install development packages
+    sudo: yes
+    action: apt name={{ item }}
+    with_items:
+        - git
+        - mercurial
+        - tortoisehg
+        - python-iniparse
+        - virtualenv
+        - virtualenvwrapper
+        - php
+        - nodejs
+        - sqlite
+        - sqliteman
+        - meld
+        - python3.6
+        - python3.6-dev
+        - postgresql-9.5
+        - postgresql-server-dev-9.5
+        - postgresql-client-9.5
+        - libxml2-dev
+        - libxslt-dev
+        - python-dev
+        - chromium-chromedriver
+        - build-essential
+        - libssl-dev
+
+  - name: Change default shell
+    sudo: yes
+    shell: usermod -s /bin/zsh {{ username }}
+    tags:
+      - zsh
+
+  - name: Enable virtualenvwrapper executable
+    shell: echo 'source /usr/share/virtualenvwrapper/virtualenvwrapper.sh' >> /home/{{ username }}/.zshrc
+    tags:
+      - virtualenvwrapper
+  
+  - name: Install Oh My Zsh
+    shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+    tags:
+      - ohmyzsh
+    
+  - name: Install yarn
+    npm:
+      name: yarn
+      global: yes
+    
+  - name: Config git editor
+    git_config:
+      name: core.editor
+      scope: global
+      value: vim
+  
+  - name: Config git push strategy
+    git_config:
+      name: push.default
+      scope: global
+      value: simple
