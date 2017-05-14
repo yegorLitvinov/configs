@@ -1,9 +1,5 @@
 - test all in docker
 - composer with PsySHell
-- themes, icons
 - sublime with packages
-- composer and node move into separage playbooks
-- Decision:
-	- Ansible command to move config files or
-	- Git repo in ~/ folder
 - Download and install p4merge
+- Move codename and username into global vars

@@ -1,0 +1,17 @@
+- hosts: localhost
+  tasks:
+
+  - name: Add Tilix repo
+    sudo: yes
+    apt_repository:
+      repo: 'ppa:webupd8team/terminix'
+      codename: 'xenial'
+
+  - name: Update apt cache
+    sudo: yes
+    action: apt update_cache=yes
+
+  - name: Install Tilix
+    sudo: yes
+    apt:
+      name: tilix

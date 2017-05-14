@@ -1,0 +1,26 @@
+- hosts: localhost
+  tasks:
+
+  - name: Update apt cache
+    sudo: yes
+    action: apt update_cache=yes
+
+  - name: Install packages
+    sudo: yes
+    action: apt name={{items}}
+    with_items:
+      - git
+      - mercurial
+      - tortoisehg
+
+  - name: Config git editor
+    git_config:
+      name: core.editor
+      scope: global
+      value: vim
+  
+  - name: Config git push strategy
+    git_config:
+      name: push.default
+      scope: global
+      value: simple

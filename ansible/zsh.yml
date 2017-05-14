@@ -1,0 +1,26 @@
+- hosts: localhost
+  vars:
+    username: 'egor'
+  tasks:
+
+  - name: Update apt cache
+    sudo: yes
+    action: apt update_cache=yes
+
+  - name: Install packages
+    sudo: yes
+    action: apt name={{ item }}
+    with_items:
+      - zsh
+      - virtualenv
+      - virtualenvwrapper
+
+  - name: Change default shell
+    sudo: yes
+    shell: usermod -s /bin/zsh {{ username }}
+
+  - name: Enable virtualenvwrapper executable
+    shell: echo 'source /usr/share/virtualenvwrapper/virtualenvwrapper.sh' >> /home/{{ username }}/.zshrc
+
+  - name: Install Oh My Zsh
+    shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"

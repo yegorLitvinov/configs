@@ -1,0 +1,16 @@
+- hosts: localhost
+  tasks:
+
+  - name: Add nodejs repo (apt update automatically)
+    sudo: yes
+    shell: curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+
+  - name: Install Node js
+    sudo: yes
+    apt:
+      name: nodejs
+
+  - name: Install yarn
+    npm:
+      name: yarn
+      global: yes
