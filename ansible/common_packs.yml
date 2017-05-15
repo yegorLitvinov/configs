@@ -2,11 +2,11 @@
   tasks:
 
   - name: Update apt cache
-    sudo: yes
+    become: yes
     action: apt update_cache=yes
 
   - name: Install utils packages
-    sudo: yes
+    become: yes
     action: apt name={{ item }}
     with_items:
       - vim
@@ -18,7 +18,7 @@
       - wget
 
   - name: Install development packages
-    sudo: yes
+    become: yes
     action: apt name={{ item }}
     with_items:
       - php

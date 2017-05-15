@@ -2,17 +2,17 @@
   tasks:
 
   - name: Add python3.6 repo
-    sudo: yes
+    become: yes
     apt_repository:
       repo: 'ppa:jonathonf/python-3.6'
       codename: 'xenial'
 
   - name: Update apt cache
-    sudo: yes
+    become: yes
     action: apt update_cache=yes
 
   - name: Install packs
-    sudo: yes
+    become: yes
     action: apt name={{ item }}
     with_items:
       - python-iniparse

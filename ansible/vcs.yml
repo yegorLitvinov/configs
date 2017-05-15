@@ -2,12 +2,12 @@
   tasks:
 
   - name: Update apt cache
-    sudo: yes
+    become: yes
     action: apt update_cache=yes
 
   - name: Install packages
-    sudo: yes
-    action: apt name={{items}}
+    become: yes
+    action: apt name={{ item }}
     with_items:
       - git
       - mercurial
@@ -18,7 +18,7 @@
       name: core.editor
       scope: global
       value: vim
-  
+
   - name: Config git push strategy
     git_config:
       name: push.default

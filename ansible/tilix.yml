@@ -2,16 +2,16 @@
   tasks:
 
   - name: Add Tilix repo
-    sudo: yes
+    become: yes
     apt_repository:
       repo: 'ppa:webupd8team/terminix'
       codename: 'xenial'
 
   - name: Update apt cache
-    sudo: yes
+    become: yes
     action: apt update_cache=yes
 
   - name: Install Tilix
-    sudo: yes
+    become: yes
     apt:
       name: tilix

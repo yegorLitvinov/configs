@@ -4,11 +4,11 @@
   tasks:
 
   - name: Update apt cache
-    sudo: yes
+    become: yes
     action: apt update_cache=yes
 
   - name: Install packages
-    sudo: yes
+    become: yes
     action: apt name={{ item }}
     with_items:
       - zsh
@@ -16,7 +16,7 @@
       - virtualenvwrapper
 
   - name: Change default shell
-    sudo: yes
+    become: yes
     shell: usermod -s /bin/zsh {{ username }}
 
   - name: Enable virtualenvwrapper executable

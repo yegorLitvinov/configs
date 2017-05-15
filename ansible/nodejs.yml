@@ -2,11 +2,11 @@
   tasks:
 
   - name: Add nodejs repo (apt update automatically)
-    sudo: yes
+    become: yes
     shell: curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 
   - name: Install Node js
-    sudo: yes
+    become: yes
     apt:
       name: nodejs
 
