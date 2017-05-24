@@ -1,5 +1,4 @@
 - test zsh.yml in docker
 - php, composer and PsySHell
-- sublime with packages
 - Download and install p4merge
 - Move codename, host and username into global vars

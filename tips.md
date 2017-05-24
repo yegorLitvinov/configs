@@ -31,7 +31,7 @@ options snd-hda-intel probe_mask=1
 ```bash
 echo 'source /usr/share/virtualenvwrapper/virtualenvwrapper.sh' >> ~/.zshrc
 WD=/path/to/project/
-cd $WD 
+cd $WD
 export DJANGO_SETTINGS_MODULE=config.settings.dev
 export PYTHONPATH="$WD/somepythonpath"
 ```
@@ -43,7 +43,7 @@ Host somehost
    User egor
    IdentityFile ~/.ssh/keys/somehost_private_key
 ```
-Now you cat access to the server by typing `ssh somehost`. 
+Now you cat access to the server by typing `ssh somehost`.
 Not forget to add your public key to the host first.
 
 
@@ -58,3 +58,4 @@ create database project_dev owner egor;
 ALTER USER myuser WITH SUPERUSER;
 ```
 
+## Setup user dirs in `.config/user-dirs.dirs`
