@@ -2,4 +2,3 @@
 - php, composer and PsySHell
 - Download and install p4merge
 - Move codename, host and username into global vars
-- yarn from ppa
