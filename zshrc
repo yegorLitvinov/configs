@@ -83,7 +83,7 @@ ZSH_THEME_HG_PROMPT_CLEAN="%{$fg[magenta]%})"
 
 alias dar="django-admin runserver"
 alias dardb="django-admin reset_db"
-alias da+="dajango-admin shell_plus"
+alias da+="django-admin shell_plus"
 alias damm="django-admin makemigrations"
 alias dam="django-admin migrate"
 alias da="django-admin"

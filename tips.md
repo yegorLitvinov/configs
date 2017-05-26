@@ -56,6 +56,7 @@ create user egor with password '1234';
 create database egor owner egor;
 create database project_dev owner egor;
 ALTER USER myuser WITH SUPERUSER;
+ALTER USER "user_name" WITH PASSWORD 'new_password';
 ```
 
 ## Setup user dirs in `.config/user-dirs.dirs`
