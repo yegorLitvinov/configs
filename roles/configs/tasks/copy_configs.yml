@@ -2,3 +2,5 @@
   copy:
     src: ../../configs/
     dest: ~/
+  tags:
+    - config

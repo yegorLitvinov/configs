@@ -8,5 +8,6 @@
   become: yes
   shell: usermod -s /bin/zsh {{ username }}
 
-- name: Install Oh My Zsh
-  shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+# TODO: Figure out, why does it crashe
+# - name: Install Oh My Zsh
+#   shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"

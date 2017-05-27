@@ -3,9 +3,13 @@
     name: core.editor
     scope: global
     value: vim
+  tags:
+    - config
 
 - name: Config git push strategy
   git_config:
     name: push.default
     scope: global
     value: simple
+  tags:
+    - config
