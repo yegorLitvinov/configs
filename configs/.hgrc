@@ -1,6 +1,7 @@
 [extensions]
-shelve=
-mq=
+shelve =
+mq =
+color =
 
 [merge-tools]
 p4.priority = 60
