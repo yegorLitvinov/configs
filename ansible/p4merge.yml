@@ -23,12 +23,18 @@
     tags:
       - Unpack
 
+  - name: Delete archive
+    file:
+      path: ~/.local/p4v.tgz
+      state: absent
+
   - name: Rename
     command: mv ~/.local/p4v-2017.1.1491634 ~/.local/p4v
     tags:
       - Unpack
 
   - name: Create symlink
-    command: ln -sf ~/.local/p4v/bin/p4merge ~/.local/bin/p4merge
-    tags:
-      - Unpack
+    file:
+      src: ~/.local/p4v/bin/p4merge
+      dest: ~/.local/bin/p4merge
+      state: link

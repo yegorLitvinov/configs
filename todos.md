@@ -1,4 +1,3 @@
-- test zsh.yml in docker
 - php, composer and PsySHell
 - Move codename, host and username into global vars
 - Checksum for all downloads

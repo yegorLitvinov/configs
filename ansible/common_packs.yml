@@ -16,6 +16,8 @@
       - indicator-cpufreq
       - curl
       - wget
+      - mc
+      - tmux
 
   - name: Install development packages
     become: yes
@@ -23,7 +25,6 @@
     with_items:
       - php
       - sqlite
-      - sqliteman
       - meld
       - postgresql-9.5
       - postgresql-server-dev-9.5
@@ -33,3 +34,4 @@
       - chromium-chromedriver
       - build-essential
       - libssl-dev
+      - tortoisehg
