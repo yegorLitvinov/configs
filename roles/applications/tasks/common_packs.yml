@@ -1,0 +1,31 @@
+- name: Install utils packages
+  become: yes
+  action: apt name={{ item }}
+  with_items:
+    - vim
+    - htop
+    - iotop
+    - chromium-browser
+    - indicator-cpufreq
+    - curl
+    - wget
+    - mc
+    - tmux
+    - xfce4-clipman
+    - xfce4-clipman-plugin
+
+- name: Install development packages
+  become: yes
+  action: apt name={{ item }}
+  with_items:
+    - php
+    - sqlite
+    - meld
+    - postgresql-9.5
+    - postgresql-server-dev-9.5
+    - postgresql-client-9.5
+    - libxml2-dev
+    - libxslt-dev
+    - chromium-chromedriver
+    - build-essential
+    - libssl-dev

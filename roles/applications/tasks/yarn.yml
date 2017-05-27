@@ -1,0 +1,22 @@
+- name: Add yarn key
+  become: yes
+  apt_key:
+    url: https://dl.yarnpkg.com/debian/pubkey.gpg
+
+- name: Add yarn repo
+  become: yes
+  shell: echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+
+- name: Update apt cache
+  become: yes
+  action: apt update_cache=yes
+
+- name: install nodejs
+  become: yes
+  apt:
+    name: nodejs
+
+- name: install yarn
+  become: yes
+  apt:
+    name: yarn

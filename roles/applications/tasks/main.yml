@@ -1,0 +1,16 @@
+- name: Update apt cache
+  become: yes
+  action: apt update_cache=yes
+
+- include: common_packs.yml
+- include: dbeaver.yml
+- include: dropbox.yml
+- include: insomnia.yml
+- include: p4merge.yml
+- include: python36.yml
+- include: sublime.yml
+- include: themes.yml
+- include: vcs.yml
+- include: vscode.yml
+- include: yarn.yml
+- include: zsh.yml

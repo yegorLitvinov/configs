@@ -1,3 +1,5 @@
+# Quick instalation of all necessary packages:
 ```bash
-ansible-playbook ansible/playbook.yml --ask-become-pass --tags "test"
+bash ./install_ansible.sh
+ansible-playbook deploy.yml --ask-become-pass
 ```

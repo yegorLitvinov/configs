@@ -1,0 +1,37 @@
+- name: Create dest dirs
+  file:
+    path: ~/.local/bin/
+    state: directory
+    mode: 0755
+  tags:
+    - Unpack
+
+- name: Download archive
+  get_url:
+    url: http://www.perforce.com/downloads/perforce/r17.1/bin.linux26x86_64/p4v.tgz
+    dest: ~/.local/
+    checksum: sha1:bca513344ed45fda8ccedabbb8335d74fec0dc2d
+
+- name: Unpack
+  unarchive:
+    remote_src: True
+    src: ~/.local/p4v.tgz
+    dest: ~/.local/
+  tags:
+    - Unpack
+
+- name: Delete archive
+  file:
+    path: ~/.local/p4v.tgz
+    state: absent
+
+- name: Rename
+  command: mv ~/.local/p4v-2017.1.1491634 ~/.local/p4v
+  tags:
+    - Unpack
+
+- name: Create symlink
+  file:
+    src: ~/.local/p4v/bin/p4merge
+    dest: ~/.local/bin/p4merge
+    state: link
