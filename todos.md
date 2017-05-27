@@ -1,5 +1,4 @@
 - test zsh.yml in docker
 - php, composer and PsySHell
-- Download and install p4merge
 - Move codename, host and username into global vars
-- Ansible task to move config files into home folder
+- Checksum for all downloads

@@ -1,0 +1,5 @@
+- hosts: localhost
+  tasks:
+
+  - name: Copy configs into user dir
+  - command: cp configs/* ~/

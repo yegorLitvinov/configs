@@ -87,3 +87,6 @@ alias da+="django-admin shell_plus"
 alias damm="django-admin makemigrations"
 alias dam="django-admin migrate"
 alias da="django-admin"
+
+SAVEHIST=2000
+setopt HIST_IGNORE_ALL_DUPS      # Delete old recorded entry if new entry is a duplicate.
