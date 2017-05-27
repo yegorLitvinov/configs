@@ -29,3 +29,6 @@
     - chromium-chromedriver
     - build-essential
     - libssl-dev
+    - virtualenv
+    - virtualenvwrapper
+    

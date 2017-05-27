@@ -1,21 +1,12 @@
-- name: Update apt cache
-  become: yes
-  action: apt update_cache=yes
-
 - name: Install packages
   become: yes
   action: apt name={{ item }}
   with_items:
     - zsh
-    - virtualenv
-    - virtualenvwrapper
 
 - name: Change default shell
   become: yes
   shell: usermod -s /bin/zsh {{ username }}
-
-- name: Enable virtualenvwrapper executable
-  shell: echo 'source /usr/share/virtualenvwrapper/virtualenvwrapper.sh' >> ~/.zshrc
 
 - name: Install Oh My Zsh
   shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"

@@ -60,3 +60,9 @@ ALTER USER "user_name" WITH PASSWORD 'new_password';
 ```
 
 ## Setup user dirs in `.config/user-dirs.dirs`
+
+## No dropbox icon xfce
+Insert into `/usr/bin/dropbox` next code:
+```python
+os.environ['DBUS_SESSION_BUS_ADDRESS'] = ""
+```
