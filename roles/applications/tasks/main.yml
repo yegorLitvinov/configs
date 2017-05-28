@@ -14,3 +14,4 @@
 - include: vscode.yml
 - include: yarn.yml
 - include: zsh.yml
+- include: docker.yml
