@@ -13,6 +13,7 @@
     - tmux
     - xfce4-clipman
     - xfce4-clipman-plugin
+    - xsel
 
 - name: Install development packages
   become: yes

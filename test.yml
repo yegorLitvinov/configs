@@ -1,0 +1,4 @@
+- hosts: ansible-test
+  roles:
+    - applications
+    - configs

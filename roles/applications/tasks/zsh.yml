@@ -1,13 +1,19 @@
-- name: Install packages
+- name: Install zsh
   become: yes
   action: apt name={{ item }}
   with_items:
+    - zsh
+  tags:
     - zsh
 
 - name: Change default shell
   become: yes
   shell: usermod -s /bin/zsh {{ username }}
+  tags:
+    - zsh
 
-# TODO: Figure out, why does it crashe
-# - name: Install Oh My Zsh
-#   shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+- name: run instalation script
+  command: bash -c "curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh"
+  tags:
+    - zsh
+
