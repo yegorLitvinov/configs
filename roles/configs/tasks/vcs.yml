@@ -4,7 +4,7 @@
     scope: global
     value: vim
   tags:
-    - config
+    - config-vcs
 
 - name: Config git push strategy
   git_config:
@@ -12,4 +12,5 @@
     scope: global
     value: simple
   tags:
-    - config
+    - config-vcs
+
