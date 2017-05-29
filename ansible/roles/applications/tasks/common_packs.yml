@@ -13,6 +13,7 @@
     - tmux
     - xfce4-clipman
     - xfce4-clipman-plugin
+    - thunar-dropbox-plugin
     - xsel
 
 - name: Install development packages
@@ -32,4 +33,4 @@
     - libssl-dev
     - virtualenv
     - virtualenvwrapper
-    
+
