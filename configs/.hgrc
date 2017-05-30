@@ -14,3 +14,5 @@ p4.binary = False
 
 [ui]
 username = Egor Litvinov
+editor = vim
+

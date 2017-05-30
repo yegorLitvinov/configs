@@ -66,3 +66,9 @@ Insert into `/usr/bin/dropbox` next code:
 ```python
 os.environ['DBUS_SESSION_BUS_ADDRESS'] = ""
 ```
+
+## Remap Caps Lock to Ctrl
+```bash
+/usr/bin/setxkbmap -option "ctrl:nocap
+```
+
