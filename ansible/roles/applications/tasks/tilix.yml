@@ -1,0 +1,15 @@
+- name: Add Tilix repo
+  become: yes
+  apt_repository:
+    repo: 'ppa:webupd8team/terminix'
+    codename: 'xenial'
+    update_cache: yes
+  tags:
+    - tilix
+
+- name: Install Tilix
+  become: yes
+  apt:
+    name: tilix
+  tags:
+    - tilix

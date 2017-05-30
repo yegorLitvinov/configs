@@ -2,3 +2,5 @@
   become: yes
   apt:
     deb: http://dbeaver.jkiss.org/files/dbeaver-ce_latest_amd64.deb
+  tags:
+    - dbeaver
