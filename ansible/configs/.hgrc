@@ -1,7 +1,11 @@
+[pager]
+pager = LESS='FRX' less
+
 [extensions]
 shelve=
 mq =
 color =
+pager =
 
 [merge-tools]
 p4.priority = 60
@@ -15,4 +19,3 @@ p4.binary = False
 [ui]
 username = Egor Litvinov
 editor = vim
-
