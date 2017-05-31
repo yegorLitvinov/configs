@@ -16,3 +16,4 @@
 - include: zsh.yml
 - include: docker.yml
 - include: tilix.yml
+- include: php.yml

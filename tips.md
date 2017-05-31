@@ -76,3 +76,8 @@ os.environ['DBUS_SESSION_BUS_ADDRESS'] = ""
 # with escape
 /usr/bin/setxkbmap -option "caps:swapescape"
 ```
+
+## Install python3.6 package
+```bash
+python3.6 -m pip install <package>
+```

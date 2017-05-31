@@ -1,0 +1,38 @@
+- name: Install php packages
+  become: yes
+  apt:
+    name: "{{ item }}"
+  with_items:
+    - php
+  tags:
+    - php
+
+- name: Download composer
+  get_url:
+    url: https://getcomposer.org/download/1.4.2/composer.phar
+    dest: ~/.local/bin/composer
+    checksum: sha1:4400106431775fc9fc45acfb875b6e34ab3fea62
+  tags:
+    - php
+
+- name: Add eXecute mode
+  file:
+    path: ~/.local/bin/composer
+    mode: 0755
+  tags:
+    - php
+
+- name: Download psyshell
+  get_url:
+    url: https://git.io/psysh
+    dest: ~/.local/bin/psysh
+    # checksum: sha1:4400106431775fc9fc45acfb875b6e34ab3fea62
+  tags:
+    - php
+
+- name: Add eXecute mode
+  file:
+    path: ~/.local/bin/psysh
+    mode: 0755
+  tags:
+    - php

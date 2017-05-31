@@ -20,7 +20,6 @@
   become: yes
   action: apt name={{ item }}
   with_items:
-    - php
     - sqlite
     - meld
     - postgresql-9.5
