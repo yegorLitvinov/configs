@@ -4,6 +4,8 @@
     name: "{{ item }}"
   with_items:
     - php
+    - php-xml
+    - php-json
   tags:
     - php
 
@@ -33,6 +35,21 @@
 - name: Add eXecute mode
   file:
     path: ~/.local/bin/psysh
+    mode: 0755
+  tags:
+    - php
+
+- name: Download phpcs
+  get_url:
+    url: https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar
+    dest: ~/.local/bin/phpcs
+    # checksum: sha1:4400106431775fc9fc45acfb875b6e34ab3fea62
+  tags:
+    - php
+
+- name: Add eXecute mode
+  file:
+    path: ~/.local/bin/phpcs
     mode: 0755
   tags:
     - php
