@@ -6,6 +6,7 @@
     - php
     - php-xml
     - php-json
+    - php-xdebug
   tags:
     - php
 
