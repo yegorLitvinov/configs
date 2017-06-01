@@ -1,15 +1,14 @@
-- name: Download archive
+- name: Download Insomnia
   get_url:
     url: https://builds.insomnia.rest/downloads/ubuntu/latest
-    dest: /tmp/
-    checksum: sha1:08ae506a62f81052d1e2b846d5bce42519f983a2
+    dest: /tmp/insomnia.deb
 
 - name: Install Insomnia
   become: yes
   apt:
-    deb: /tmp/insomnia_5.1.0_amd64.deb
+    deb: /tmp/insomnia.deb
 
 - name: Delete deb
   file:
-    path: /tmp/insomnia_5.1.0_amd64.deb
+    path: /tmp/insomnia.deb
     state: absent

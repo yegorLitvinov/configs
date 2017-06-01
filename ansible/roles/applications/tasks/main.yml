@@ -17,3 +17,4 @@
 - include: docker.yml
 - include: tilix.yml
 - include: php.yml
+# - include: pycharm.yml
