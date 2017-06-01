@@ -1,4 +1,4 @@
-- name: Create dest dirs
+- name: Create local bin dir
   file:
     path: ~/.local/bin/
     state: directory
@@ -6,7 +6,7 @@
   tags:
     - insomnia
 
-- name: Download archive
+- name: Download p4merge
   get_url:
     url: http://www.perforce.com/downloads/perforce/r17.1/bin.linux26x86_64/p4v.tgz
     dest: ~/.local/
