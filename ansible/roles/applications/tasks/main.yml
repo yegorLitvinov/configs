@@ -12,7 +12,7 @@
 - include: themes.yml
 - include: vcs.yml
 - include: vscode.yml
-- include: yarn.yml
+- include: nodejs.yml
 - include: zsh.yml
 - include: docker.yml
 - include: tilix.yml
