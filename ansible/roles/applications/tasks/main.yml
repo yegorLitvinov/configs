@@ -15,7 +15,7 @@
 - include: nodejs.yml
 - include: zsh.yml
 - include: docker.yml
-- include: tilix.yml
+# - include: tilix.yml
 - include: php.yml
 - include: fonts.yml
 # - include: pycharm.yml

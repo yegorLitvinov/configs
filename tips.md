@@ -72,7 +72,7 @@ os.environ['DBUS_SESSION_BUS_ADDRESS'] = ""
 ## Remap Caps Lock
 ```bash
 # with ctrl
-/usr/bin/setxkbmap -option "ctrl:nocap "
+/usr/bin/setxkbmap -option "ctrl:nocaps"
 # with escape
 /usr/bin/setxkbmap -option "caps:swapescape"
 ```
