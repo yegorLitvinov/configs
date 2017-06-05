@@ -1,6 +1,6 @@
 - name: Copy hidden configs into user dir
   copy:
-    src: ../../configs/
+    src: ../../../configs/
     dest: ~/
   tags:
     - config
