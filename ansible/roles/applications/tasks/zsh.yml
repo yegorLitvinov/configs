@@ -3,17 +3,10 @@
   action: apt name={{ item }}
   with_items:
     - zsh
-  tags:
-    - zsh
 
 - name: Change default shell
   become: yes
   shell: usermod -s /bin/zsh {{ username }}
-  tags:
-    - zsh
 
 - name: run instalation script
   command: bash -c "curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh"
-  tags:
-    - zsh
-

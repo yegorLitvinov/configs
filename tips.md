@@ -27,6 +27,7 @@ options snd-hda-intel single_cmd=1
 options snd-hda-intel probe_mask=1
 ```
 
+
 ## Virtualenvwrapper
 ```bash
 echo 'source /usr/share/virtualenvwrapper/virtualenvwrapper.sh' >> ~/.zshrc
@@ -35,6 +36,7 @@ cd $WD
 export DJANGO_SETTINGS_MODULE=config.settings.dev
 export PYTHONPATH="$WD/somepythonpath"
 ```
+
 
 ## Alias for server. Copy into `~/.ssh/config`
 ```
@@ -58,6 +60,7 @@ create database project_dev owner egor;
 ALTER USER myuser WITH SUPERUSER;
 ALTER USER "user_name" WITH PASSWORD 'new_password';
 ```
+
 
 ## Setup user dirs in `~/.config/user-dirs.dirs`
 

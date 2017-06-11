@@ -15,7 +15,6 @@ p4.gui = True
 p4.args = $base $local $other $output
 p4.binary = False
 
-
 [ui]
 username = Egor Litvinov
 editor = vim

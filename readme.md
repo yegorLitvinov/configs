@@ -1,8 +1,5 @@
-# Quick instalation of all necessary packages:
+## Quick instalation of all necessary packages in Ubuntu(Mint) with Xfce
 ```bash
-sh ./ansible/install_ansible.sh
-cd ansible
-ansible-playbook deploy.yml --ask-become-pass
 ansible ansible-test -m ping -i hosts
-ansible-playbook -i hosts test.yml --ask-become-pass --tags=zsh
+ansible-playbook deploy.yml --ask-become-pass
 ```

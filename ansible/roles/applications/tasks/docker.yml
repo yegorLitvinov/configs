@@ -3,11 +3,9 @@
   apt:
     state: absent
     name: '{{ item }}'
-  with_items: 
+  with_items:
     - docker
     - docker-engine
-  tags:
-    - docker
 
 - name: Install necessary packs
   become: yes
@@ -18,27 +16,19 @@
     - ca-certificates
     - curl
     - software-properties-common
-  tags:
-    - docker
 
 - name: Add apt key
   become: yes
   apt_key:
     url: https://download.docker.com/linux/ubuntu/gpg
-  tags:
-    - docker
 
 - name: Add docker repo
   become: yes
   apt_repository:
     repo: 'deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable'
-  tags:
-    - docker
 
 - name: Install docker
   become: yes
   apt:
     name: docker-ce
-  tags:
-    - docker
 

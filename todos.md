@@ -1,4 +1,2 @@
 - Move codename, host and username into global vars
 - Checksum for all downloads?
-- add /etc/hosts
-- tags for tasks

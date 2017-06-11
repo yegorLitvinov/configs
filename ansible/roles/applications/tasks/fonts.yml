@@ -3,50 +3,36 @@
     path: ~/.fonts
     state: directory
     mode: 0755
-  tags:
-    - fonts
 
 - name: Download Fira Code font
   get_url:
     url: https://codeload.github.com/tonsky/FiraCode/zip/master
     dest: /tmp/firacode.zip
-  tags:
-    - fonts
 
 - name: Unpack archive
   unarchive:
     src: /tmp/firacode.zip
     dest: ~/.fonts/
-  tags:
-    - fonts
 
 - name: Delete archive
   file:
     path: /tmp/firacode.zip
     state: absent
-  tags:
-    - fonts
 
 - name: Download Source Code Pro font
   get_url:
     url: https://codeload.github.com/adobe-fonts/source-code-pro/zip/2.030R-ro/1.050R-it
     dest: /tmp/source_code_pro.zip
-  tags:
-    - fonts
 
 - name: Unpack archive
   unarchive:
     src: /tmp/source_code_pro.zip
     dest: ~/.fonts/
-  tags:
-    - fonts
 
 - name: Delete archive
   file:
     path: /tmp/source_code_pro.zip
     state: absent
-  tags:
-    - fonts
 
 - name: Rebuild font cache
   command: fc-cache

@@ -2,40 +2,28 @@
   get_url:
     url: https://deb.nodesource.com/setup_6.x
     dest: /tmp/nodesource_setup.sh
-  tags:
-    - nodejs
 
 - name: Run script
   become: yes
   shell: sh /tmp/nodesource_setup.sh
-  tags:
-    - nodejs
 
 - name: Delete script
   file:
     path: /tmp/nodesource_setup.sh
     state: absent
-  tags:
-    - nodejs
 
 - name: Add yarn key
   become: yes
   apt_key:
     url: https://dl.yarnpkg.com/debian/pubkey.gpg
-  tags:
-    - nodejs
 
 - name: Add yarn repo
   become: yes
   shell: echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-  tags:
-    - nodejs
 
 - name: Update apt cache
   become: yes
   action: apt update_cache=yes
-  tags:
-    - nodejs
 
 - name: Install packages
   become: yes
@@ -44,5 +32,3 @@
   with_items:
     - nodejs
     - yarn
-  tags:
-    - nodejs

@@ -2,8 +2,6 @@
   get_url:
     url: https://download-cf.jetbrains.com/python/pycharm-community-2017.1.3.tar.gz
     dest: /tmp/pycharm.tar.gz
-  tags:
-    - pycharm
 
 - name: Unpack
   become: yes
@@ -11,20 +9,14 @@
     remote_src: yes
     src: /tmp/pycharm.tar.gz
     dest: /usr/share/
-  tags:
-    - pycharm
 
 - name: Delete archive
   file:
     path: /tmp/pycharm.tar.gz
     state: absent
-  tags:
-    - pycharm
 
 - name: Create symlink
   file:
     src: /usr/share/pycharm-community-2017.1.3/bin/pycharm.sh
     dest: ~/.local/bin/pycharm
     state: link
-  tags:
-    - pycharm
