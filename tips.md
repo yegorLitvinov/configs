@@ -89,3 +89,6 @@ python3.6 -m pip install <package>
 Sometimes installation scripts (e.g. docker, nodejs) use your codename from `/etc/lsb-release`
 to add right repository. But some distributives (like Linux Mint) have their own code.
 To prevent errors, you may edit the config file and fix the problem
+
+## Mysql
+- fuction `convert_tz` returns `NULL` (in django's ExtractYear): load timezone table into mysql: `mysql_tzinfo_to_sql /usr/share/zoneinfo | mysql -u root -p mysql`
