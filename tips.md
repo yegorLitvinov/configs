@@ -92,3 +92,9 @@ To prevent errors, you may edit the config file and fix the problem
 
 ## Mysql
 - fuction `convert_tz` returns `NULL` (in django's ExtractYear): load timezone table into mysql: `mysql_tzinfo_to_sql /usr/share/zoneinfo | mysql -u root -p mysql`
+- problems with encodig:
+Paste into `[mysqld]` section of `/etc/mysql/mysql.conf.d/mysqld.cnf`:
+```ini
+character-set-server=utf8
+collation-server=utf8_general_ci
+```
