@@ -109,3 +109,6 @@ alias tmux="tmux attach || tmux new"
 # that way the hook won't be run on shelve/unshelve:
 alias hgunshelve='hg unshelve --config hooks.pretxncommit.precommit='
 alias hgshelve='hg shelve --config hooks.pretxncommit.precommit='
+
+alias dm='docker-machine'
+

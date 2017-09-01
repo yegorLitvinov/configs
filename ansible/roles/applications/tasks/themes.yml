@@ -20,3 +20,23 @@
     - numix-wallpaper-*
     - numix-gtk-theme
     - numix-icon-theme-circle
+
+- name: Clone base16 xfce terminal themes
+  shell: git clone https://github.com/afg984/base16-xfce4-terminal
+  args:
+    chdir: /tmp
+
+- name: Create themes dir
+  file:
+    path: ~/.local/share/xfce4/terminal/
+    state: directory
+
+- name: Copy terminal themes
+  copy:
+    src: /tmp/base16-xfce4-terminal/colorschemes
+    dest: ~/.local/share/xfce4/terminal/
+
+- name: Remove repo
+  file:
+    path: /tmp/base16-xfce4-terminal
+    state: absent
