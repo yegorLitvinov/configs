@@ -104,8 +104,6 @@ setopt HIST_IGNORE_ALL_DUPS      # Delete old recorded entry if new entry is a d
 
 source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
 
-alias tmux="tmux attach || tmux new"
-
 # You may also like to add aliases to your shell config,
 # that way the hook won't be run on shelve/unshelve:
 alias hgunshelve='hg unshelve --config hooks.pretxncommit.precommit='
