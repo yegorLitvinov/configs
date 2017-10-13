@@ -91,12 +91,13 @@ ZSH_THEME_HG_PROMPT_CLEAN="%{$fg[magenta]%})"
 
 PROMPT='${ret_status}%{$fg_bold[green]%}%p %{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)$(hg_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
 
-alias dar="django-admin runserver"
-alias dardb="django-admin reset_db"
-alias da+="django-admin shell_plus"
-alias damm="django-admin makemigrations"
-alias dam="django-admin migrate"
 alias da="django-admin"
+alias dar="da runserver"
+alias dar+="da runserver_plus"
+alias dardb="da reset_db"
+alias da+="da shell_plus"
+alias damm="da makemigrations"
+alias dam="da migrate"
 
 SAVEHIST=2000
 setopt HIST_IGNORE_ALL_DUPS      # Delete old recorded entry if new entry is a duplicate.
@@ -111,4 +112,3 @@ alias hgunshelve='hg unshelve --config hooks.pretxncommit.precommit='
 alias hgshelve='hg shelve --config hooks.pretxncommit.precommit='
 
 alias dm='docker-machine'
-

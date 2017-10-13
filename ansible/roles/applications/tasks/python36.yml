@@ -19,3 +19,10 @@
     - virtualenv
     - virtualenvwrapper
     - python3-pip
+
+- name: Install global packages
+  become: no
+  pip:
+    name: pipenv
+    executable: pip3
+    extra_args: --user
