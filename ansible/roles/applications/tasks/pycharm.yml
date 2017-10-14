@@ -1,6 +1,6 @@
 - name: Download Pycharm
   get_url:
-    url: https://download-cf.jetbrains.com/python/pycharm-community-2017.1.3.tar.gz
+    url: https://download-cf.jetbrains.com/python/pycharm-community-2017.2.3.tar.gz
     dest: /tmp/pycharm.tar.gz
 
 - name: Unpack
@@ -17,6 +17,6 @@
 
 - name: Create symlink
   file:
-    src: /usr/share/pycharm-community-2017.1.3/bin/pycharm.sh
+    src: /usr/share/pycharm-community-2017.2.3/bin/pycharm.sh
     dest: ~/.local/bin/pycharm
     state: link

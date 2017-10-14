@@ -5,7 +5,7 @@
 
 - name: Run script
   become: yes
-  shell: sh /tmp/nodesource_setup.sh
+  command: bash /tmp/nodesource_setup.sh
 
 - name: Delete script
   file:
@@ -19,7 +19,7 @@
 
 - name: Add yarn repo
   become: yes
-  shell: echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+  command: bash -c 'echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list'
 
 - name: Update apt cache
   become: yes

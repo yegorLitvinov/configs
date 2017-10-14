@@ -2,7 +2,6 @@
   become: yes
   apt_repository:
     repo: 'ppa:jonathonf/python-3.6'
-    codename: 'xenial'
 
 - name: Update apt cache
   become: yes

@@ -7,22 +7,19 @@
   become: yes
   apt_repository:
     repo: 'ppa:numix/ppa'
-    codename: 'xenial'
-
-- name: Update apt cache
-  become: yes
-  action: apt update_cache=yes
 
 - name: Install numix packages
   become: yes
-  action: apt name={{ item }}
+  apt:
+    update_cache: yes
+    name: "{{ item }}"
   with_items:
     - numix-wallpaper-*
     - numix-gtk-theme
     - numix-icon-theme-circle
 
 - name: Clone base16 xfce terminal themes
-  shell: git clone https://github.com/afg984/base16-xfce4-terminal
+  shell: bash -c "git clone https://github.com/afg984/base16-xfce4-terminal"
   args:
     chdir: /tmp
 

@@ -33,3 +33,8 @@
     - virtualenv
     - virtualenvwrapper
     - direnv
+
+- name: Install tmux plugin manager
+  git:
+    repo: https://github.com/tmux-plugins/tpm.git
+    dest: ~/.tmux/plugins/tpm

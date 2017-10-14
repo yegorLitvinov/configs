@@ -2,7 +2,6 @@
   become: yes
   apt_repository:
     repo: 'ppa:webupd8team/terminix'
-    codename: 'xenial'
     update_cache: yes
 
 - name: Install Tilix

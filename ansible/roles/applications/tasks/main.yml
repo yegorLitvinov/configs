@@ -1,21 +1,25 @@
-- name: Update apt cache
-  become: yes
-  action: apt update_cache=yes
+# - name: Update apt cache
+#  become: yes
+#  action: apt update_cache=yes
+
+# Do not need it
+# - include: dropbox.yml
+# - include: tilix.yml
+# - include: php.yml
+
+# Errors with deb module
+# - include: dbeaver.yml
+# - include: insomnia.yml
+# - include: vscode.yml
+# - include: themes.yml
 
 - include: common_packs.yml
-- include: dbeaver.yml
-- include: dropbox.yml
-- include: insomnia.yml
+- include: docker.yml
+- include: fonts.yml
+- include: nodejs.yml
 - include: p4merge.yml
+- include: pycharm.yml
 - include: python36.yml
 - include: sublime.yml
-- include: themes.yml
 - include: vcs.yml
-- include: vscode.yml
-- include: nodejs.yml
 - include: zsh.yml
-- include: docker.yml
-# - include: tilix.yml
-- include: php.yml
-- include: fonts.yml
-# - include: pycharm.yml
