@@ -110,3 +110,8 @@ alias hgunshelve='hg unshelve --config hooks.pretxncommit.precommit='
 alias hgshelve='hg shelve --config hooks.pretxncommit.precommit='
 
 alias dm='docker-machine'
+eval "$(direnv hook zsh)"
+
+if [ -d "$HOME/.local/bin" ] ; then
+  PATH="$PATH:$HOME/.local/bin"
+fi

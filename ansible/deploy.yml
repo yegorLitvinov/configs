@@ -1,4 +1,4 @@
-- hosts: localhost
+- hosts: all
   roles:
-    - applications
+    # - applications
     - configs

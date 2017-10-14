@@ -1,2 +1,2 @@
-ansible-test
-
+localhost ansible_connection=local
+# test ...
