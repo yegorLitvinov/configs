@@ -15,6 +15,7 @@
     - xfce4-clipman-plugin
     - thunar-dropbox-plugin
     - xsel
+    - httpie
 
 - name: Install development packages
   become: yes
