@@ -54,11 +54,12 @@ Not forget to add your public key to the host first.
 sudo -u postgres psql
 ```
 ```sql
-create user egor with password '1234';
-create database egor owner egor;
-create database project_dev owner egor;
-ALTER USER myuser WITH SUPERUSER;
-ALTER USER "user_name" WITH PASSWORD 'new_password';
+CREATE USER user WITH ENCRYPTED PASSWORD 'password' CREATEDB;
+CREATE DATABASE user WITH ENCODING 'UTF-8' OWNER "user";
+GRANT ALL PRIVILEGES ON DATABASE user TO user;
+
+ALTER USER egor WITH SUPERUSER;
+ALTER USER egor WITH PASSWORD 'new_password';
 ```
 
 
