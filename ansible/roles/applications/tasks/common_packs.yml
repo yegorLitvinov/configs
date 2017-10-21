@@ -16,6 +16,9 @@
     - thunar-dropbox-plugin
     - xsel
     - httpie
+    - redshift-gtk
+    - geoclue-2.0
+    - apt-file
 
 - name: Install development packages
   become: yes

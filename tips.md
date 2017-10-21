@@ -98,3 +98,11 @@ Paste into `[mysqld]` section of `/etc/mysql/mysql.conf.d/mysqld.cnf`:
 character-set-server=utf8
 collation-server=utf8_general_ci
 ```
+
+## Pantheon hangs up on login
+``` bash
+# fix get-distro-upgrade.py is absent
+sudo apt install packagekit-backend-aptcc
+# fix Application 'at-spi-dbus-bus.desktop' failed to register before timeout
+sudo mv /etc/xdg/autostart/at-spi-dbus-bus.desktop /etc/xdg/autostart/at-spi-dbus-bus.desktop.deleted
+```
