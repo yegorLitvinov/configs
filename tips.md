@@ -123,3 +123,8 @@ apm_battery = 254
 gsettings set org.gnome.settings-daemon.plugins.media-keys screensaver "[]"
 ```
 
+## Generate random string
+```bash
+pwgen -s 16 1
+```
+

@@ -40,6 +40,7 @@
     - virtualbox
     - sshpass
 #   - vagrant from http://*.deb (:
+    - pwgen
 
 - name: Install tmux plugin manager
   git:
