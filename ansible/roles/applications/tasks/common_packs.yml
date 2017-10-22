@@ -37,6 +37,9 @@
     - virtualenv
     - virtualenvwrapper
     - direnv
+    - virtualbox
+    - sshpass
+#   - vagrant from http://*.deb (:
 
 - name: Install tmux plugin manager
   git:

@@ -107,3 +107,14 @@ sudo apt install packagekit-backend-aptcc
 # fix Application 'at-spi-dbus-bus.desktop' failed to register before timeout
 sudo mv /etc/xdg/autostart/at-spi-dbus-bus.desktop /etc/xdg/autostart/at-spi-dbus-bus.desktop.deleted
 ```
+
+## Turn of hdd heads parking
+``` bash
+sudo hdparm -B 254 /dev/sda
+```
+or in `/etc/hdparm.conf
+```
+apm = 254
+apm_battery = 254
+```
+
