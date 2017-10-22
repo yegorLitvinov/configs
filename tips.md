@@ -118,3 +118,8 @@ apm = 254
 apm_battery = 254
 ```
 
+## Disable Ctrl+Alt+L
+```bash
+gsettings set org.gnome.settings-daemon.plugins.media-keys screensaver "[]"
+```
+
