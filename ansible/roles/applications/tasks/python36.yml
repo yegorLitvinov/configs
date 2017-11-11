@@ -3,13 +3,11 @@
   apt_repository:
     repo: 'ppa:jonathonf/python-3.6'
 
-- name: Update apt cache
+- name: Install packages
   become: yes
-  action: apt update_cache=yes
-
-- name: Install packs
-  become: yes
-  action: apt name={{ item }}
+  apt:
+    name: "{{ item }}"
+    update_cache: yes
   with_items:
     - python-iniparse
     - python-dev
@@ -17,7 +15,7 @@
     - python3.6-dev
     - virtualenv
     - virtualenvwrapper
-    - python3-pip
+    - python3-pip  # Todo: install pip3.6
 
 - name: Install global packages
   become: no

@@ -115,3 +115,7 @@ eval "$(direnv hook zsh)"
 if [ -d "$HOME/.local/bin" ] ; then
   PATH="$PATH:$HOME/.local/bin"
 fi
+
+if [ -d "$HOME/.yarn/bin" ] ; then
+  PATH="$PATH:$HOME/.yarn/bin"
+fi

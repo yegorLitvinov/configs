@@ -51,7 +51,10 @@ Not forget to add your public key to the host first.
 
 ## Some postgres tips
 ```bash
+# login as postgres user
 sudo -u postgres psql
+# when locale error
+sudo locale-gen ru_RU.UTF-8
 ```
 ```sql
 CREATE USER user WITH ENCRYPTED PASSWORD 'password' CREATEDB;
@@ -128,3 +131,10 @@ gsettings set org.gnome.settings-daemon.plugins.media-keys screensaver "[]"
 pwgen -s 16 1
 ```
 
+## Virtual Memory settings in `/etc/sysctl.conf`
+```
+vm.swappiness = 10
+fs.inotify.max_user_watches=524288
+vm.dirty_ratio = 10
+vm.dirty_background_ratio = 5
+```
