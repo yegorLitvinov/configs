@@ -86,6 +86,8 @@ os.environ['DBUS_SESSION_BUS_ADDRESS'] = ""
 
 ## Install python3.6 package
 ```bash
+sudo add-apt-repository ppa:jonathonf/python-3.6
+curl https://bootstrap.pypa.io/get-pip.py | python3.6
 python3.6 -m pip install <package>
 ```
 
