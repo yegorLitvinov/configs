@@ -140,3 +140,10 @@ fs.inotify.max_user_watches=524288
 vm.dirty_ratio = 10
 vm.dirty_background_ratio = 5
 ```
+
+## Compiz (windows can't handle focus, have no headers)
+```
+dconf reset -f /org/compiz/
+window-manager-launcher
+```
+
