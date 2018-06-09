@@ -1,5 +1,6 @@
 - name: Install php packages
   become: yes
+  become_user: root
   apt:
     name: '{{ item }}'
   with_items:

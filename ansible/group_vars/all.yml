@@ -1,6 +1,6 @@
 user: egor
 home: '/home/{{ user }}'
-ubuntu_release: xenial
+ubuntu_release: bionic
 
 # Software versions
 vagrant_version: '2.1.1'

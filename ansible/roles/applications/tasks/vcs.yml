@@ -1,5 +1,6 @@
 - name: Install packages
   become: yes
+  become_user: root
   action: apt name={{ item }}
   with_items:
     - git

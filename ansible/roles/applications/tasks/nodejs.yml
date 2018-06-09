@@ -5,6 +5,7 @@
 
 - name: Run script
   become: yes
+  become_user: root
   command: bash /tmp/nodesource_setup.sh
 
 - name: Delete script
@@ -14,20 +15,24 @@
 
 - name: Add yarn key
   become: yes
+  become_user: root
   apt_key:
     url: https://dl.yarnpkg.com/debian/pubkey.gpg
 
 - name: Add yarn repo
   become: yes
+  become_user: root
   apt_repository:
     repo: deb https://dl.yarnpkg.com/debian/ stable main
 
 - name: Update apt cache
   become: yes
+  become_user: root
   action: apt update_cache=yes
 
 - name: Install packages
   become: yes
+  become_user: root
   apt:
     name: '{{ item }}'
   with_items:

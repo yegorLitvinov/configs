@@ -1,21 +1,23 @@
 - name: Install arc-osx theme
   become: yes
+  become_user: root
   apt:
     deb: https://gitlab.com/LinxGem33/X-Arc-White/uploads/26bccc81678392584149afa3167f8e78/osx-arc-collection_1.4.7_amd64.deb
 
 - name: Add numix repo
   become: yes
+  become_user: root
   apt_repository:
     codename: '{{ ubuntu_release }}'
     repo: 'ppa:numix/ppa'
 
 - name: Install numix packages
   become: yes
+  become_user: root
   apt:
     update_cache: yes
     name: '{{ item }}'
   with_items:
-    - numix-wallpaper-*
     - numix-gtk-theme
     - numix-icon-theme-circle
 

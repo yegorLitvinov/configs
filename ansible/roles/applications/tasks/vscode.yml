@@ -1,4 +1,5 @@
 - name: Install vscode
   become: yes
+  become_user: root
   apt:
     deb: https://az764295.vo.msecnd.net/stable/6a6e02cef0f2122ee1469765b704faf5d0e0d859/code_1.24.0-1528306776_amd64.deb

@@ -147,3 +147,8 @@ dconf reset -f /org/compiz/
 window-manager-launcher
 ```
 
+## Spectre / Meltdown
+```
+grep . /sys/devices/system/cpu/vulnerabilities/*
+```
+To turn patch off put `spectre_v2=off pti=off` into `/etc/default/grub`

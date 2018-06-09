@@ -1,10 +1,12 @@
 - name: Add python3.6 repo
   become: yes
+  become_user: root
   apt_repository:
     codename: '{{ ubuntu_release }}'  
     repo: 'ppa:jonathonf/python-3.6'
 
 - name: Install packages
+  become_user: root
   become: yes
   apt:
     name: '{{ item }}'
@@ -19,7 +21,6 @@
     - python3-pip  # Todo: install pip3.6
 
 - name: Install global packages
-  become: no
   pip:
     name: pipenv
     executable: pip3

@@ -1,5 +1,6 @@
 - name: Uninstall old packages
   become: yes
+  become_user: root
   apt:
     state: absent
     name: '{{ item }}'
@@ -9,6 +10,7 @@
 
 - name: Install necessary packs
   become: yes
+  become_user: root
   apt:
     name: '{{ item }}'
   with_items:
@@ -19,21 +21,21 @@
 
 - name: Add apt key
   become: yes
+  become_user: root
   apt_key:
     url: https://download.docker.com/linux/ubuntu/gpg
 
 - name: Add docker repo
   become: yes
+  become_user: root
   apt_repository:
     repo: 'deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ ubuntu_release }} stable'
 
 - name: Install docker
   become: yes
+  become_user: root
   apt:
-    name: docker-ce
-
-- name: Download docker-compose
-  get_url:
-    url: 'https://github.com/docker/compose/releases/download/{{ compose_version }}/docker-compose-Linux-x86_64'
-    dest: '{{ home }}/.local/bin/docker-compose'
-    mode: a+x
+    name: '{{ item }}'
+  with_items:
+    - docker
+    - docker-compose

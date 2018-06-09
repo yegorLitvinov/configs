@@ -5,6 +5,7 @@
 
 - name: Unpack
   become: yes
+  become_user: root
   unarchive:
     remote_src: yes
     src: /tmp/pycharm.tar.gz

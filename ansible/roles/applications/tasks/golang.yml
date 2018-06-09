@@ -1,5 +1,5 @@
 - file:
-    path: '{{ home }}/.local/
+    path: '{{ home }}/.local/'
     state: directory
     mode: 0755
 

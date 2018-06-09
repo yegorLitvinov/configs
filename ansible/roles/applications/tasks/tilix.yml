@@ -1,5 +1,6 @@
 - name: Add Tilix repo
   become: yes
+  become_user: root
   apt_repository:
     codename: '{{ ubuntu_release }}'  
     repo: 'ppa:webupd8team/terminix'
@@ -7,5 +8,6 @@
 
 - name: Install Tilix
   become: yes
+  become_user: root
   apt:
     name: tilix

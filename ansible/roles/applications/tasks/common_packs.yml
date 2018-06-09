@@ -1,5 +1,6 @@
 - name: Install utils packages
   become: yes
+  become_user: root
   action: apt name={{ item }}
   with_items:
     - vim
@@ -20,6 +21,7 @@
 
 - name: Install development packages
   become: yes
+  become_user: root
   action: apt name={{ item }}
   with_items:
     - sqlite
@@ -39,6 +41,7 @@
 
 - name: Vagrant
   become: yes
+  become_user: root
   apt:
     deb: 'https://releases.hashicorp.com/vagrant/{{ vagrant_version }}/vagrant_{{ vagrant_version }}_x86_64.deb'
 
