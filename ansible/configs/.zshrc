@@ -120,4 +120,7 @@ if [ -d "$HOME/.yarn/bin" ] ; then
   PATH="$PATH:$HOME/.yarn/bin"
 fi
 
+alias l="ls -lah"
+
 export PATH=~/.config/yarn/global/node_modules/.bin:$PATH
+export PATH=~/.local/go/bin:$PATH

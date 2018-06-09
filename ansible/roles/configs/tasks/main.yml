@@ -1,4 +1,2 @@
 - include: copy_configs.yml
-
-# Errors
-# - include: vcs.yml
+- include: vcs.yml
