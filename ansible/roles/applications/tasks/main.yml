@@ -1,7 +1,3 @@
-# - name: Update apt cache
-#   become: yes
-#   action: apt update_cache=yes
-
 # Do not need it (may be outdated, I checked them a long time ago)
 # - include: dbeaver.yml
 # - include: dropbox.yml
@@ -12,11 +8,12 @@
 # - include: sublime.yml
 # - include: tilix.yml
 
-# - include: common_packs.yml
-# - include: docker.yml
-# - include: fonts.yml
-# - include: insomnia.yml
-# - include: nodejs.yml
+- include: common_packs.yml
+- include: docker.yml
+- include: fonts.yml
+- include: golang.yml
+- include: insomnia.yml
+- include: nodejs.yml
 - include: themes.yml
 - include: vcs.yml
 - include: vscode.yml

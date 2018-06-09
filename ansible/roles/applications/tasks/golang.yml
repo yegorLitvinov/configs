@@ -1,0 +1,10 @@
+- file:
+    path: '{{ home }}/.local/
+    state: directory
+    mode: 0755
+
+- name: Download golang
+  unarchive:
+    src: 'https://dl.google.com/go/go{{ golang_version }}.linux-amd64.tar.gz'
+    dest: '{{ home }}/.local/'
+    remote_src: yes

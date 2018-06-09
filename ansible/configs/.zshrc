@@ -119,3 +119,5 @@ fi
 if [ -d "$HOME/.yarn/bin" ] ; then
   PATH="$PATH:$HOME/.yarn/bin"
 fi
+
+export PATH=~/.config/yarn/global/node_modules/.bin:$PATH

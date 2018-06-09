@@ -6,7 +6,7 @@
 
 - name: Change default shell
   become: yes
-  shell: usermod -s /bin/zsh {{ username }}
+  shell: usermod -s /bin/zsh {{ user }}
 
 - name: Clone oh-my-zsh repo
   git:
