@@ -1,4 +1,0 @@
-- name: Install DBeaver
-  become: yes
-  apt:
-    deb: https://dbeaver.jkiss.org/files/dbeaver-ce_latest_amd64.deb

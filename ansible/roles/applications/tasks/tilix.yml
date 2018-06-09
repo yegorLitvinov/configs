@@ -1,6 +1,7 @@
 - name: Add Tilix repo
   become: yes
   apt_repository:
+    codename: '{{ ubuntu_release }}'  
     repo: 'ppa:webupd8team/terminix'
     update_cache: yes
 

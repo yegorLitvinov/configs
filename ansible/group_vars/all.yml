@@ -1,2 +1,8 @@
----
 username: egor
+home: '/home/{{ username }}'
+ubuntu_release: xenial
+
+# Software versions
+vagrant_version: '2.1.1'
+compose_version: '1.21.2'
+node_version: 8

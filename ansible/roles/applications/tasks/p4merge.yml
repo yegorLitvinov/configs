@@ -1,31 +1,31 @@
 - name: Create local bin dir
   file:
-    path: ~/.local/bin/
+    path: '{{ home }}/.local/bin/'
     state: directory
     mode: 0755
 
 - name: Download p4merge
   get_url:
     url: http://www.perforce.com/downloads/perforce/r17.1/bin.linux26x86_64/p4v.tgz
-    dest: ~/.local/
+    dest: '{{ home }}/.local/'
     checksum: sha1:bca513344ed45fda8ccedabbb8335d74fec0dc2d
 
 - name: Unpack
   unarchive:
     remote_src: True
-    src: ~/.local/p4v.tgz
-    dest: ~/.local/
+    src: '{{ home }}/.local/p4v.tgz'
+    dest: '{{ home }}/.local/'
 
 - name: Delete archive
   file:
-    path: ~/.local/p4v.tgz
+    path: '{{ home }}/.local/p4v.tgz'
     state: absent
 
 - name: Rename
-  command: mv ~/.local/p4v-2017.1.1491634 ~/.local/p4v
+  command: mv '{{ home }}/.local/p4v-2017.1.1491634 {{ home }}/.local/p4v'
 
 - name: Create symlink
   file:
-    src: ~/.local/p4v/bin/p4merge
-    dest: ~/.local/bin/p4merge
+    src: '{{ home }}/.local/p4v/bin/p4merge'
+    dest: '{{ home }}/.local/bin/p4merge'
     state: link

@@ -1,6 +1,6 @@
 - name: Download node installation script
   get_url:
-    url: https://deb.nodesource.com/setup_6.x
+    url: 'https://deb.nodesource.com/setup_{{ node_version }}.x'
     dest: /tmp/nodesource_setup.sh
 
 - name: Run script
@@ -19,7 +19,8 @@
 
 - name: Add yarn repo
   become: yes
-  command: bash -c 'echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list'
+  apt_repository:
+    repo: deb https://dl.yarnpkg.com/debian/ stable main
 
 - name: Update apt cache
   become: yes

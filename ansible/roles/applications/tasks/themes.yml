@@ -1,39 +1,40 @@
 - name: Install arc-osx theme
   become: yes
   apt:
-    deb: https://github.com/LinxGem33/OSX-Arc-Darker/releases/download/v1.4.1/osx-arc-collection_1.4.1_amd64.deb
+    deb: https://gitlab.com/LinxGem33/X-Arc-White/uploads/26bccc81678392584149afa3167f8e78/osx-arc-collection_1.4.7_amd64.deb
 
 - name: Add numix repo
   become: yes
   apt_repository:
+    codename: '{{ ubuntu_release }}'
     repo: 'ppa:numix/ppa'
 
 - name: Install numix packages
   become: yes
   apt:
     update_cache: yes
-    name: "{{ item }}"
+    name: '{{ item }}'
   with_items:
     - numix-wallpaper-*
     - numix-gtk-theme
     - numix-icon-theme-circle
 
-- name: Clone base16 xfce terminal themes
-  shell: bash -c "git clone https://github.com/afg984/base16-xfce4-terminal"
-  args:
-    chdir: /tmp
+# - name: Clone base16 xfce terminal themes
+#   shell: bash -c 'git clone https://github.com/afg984/base16-xfce4-terminal'
+#   args:
+#     chdir: /tmp
 
-- name: Create themes dir
-  file:
-    path: ~/.local/share/xfce4/terminal/
-    state: directory
+# - name: Create themes dir
+#   file:
+#     path: '{{ home }}/.local/share/xfce4/terminal/'
+#     state: directory
 
-- name: Copy terminal themes
-  copy:
-    src: /tmp/base16-xfce4-terminal/colorschemes
-    dest: ~/.local/share/xfce4/terminal/
+# - name: Copy terminal themes
+#   copy:
+#     src: /tmp/base16-xfce4-terminal/colorschemes
+#     dest: '{{ home }}/.local/share/xfce4/terminal/'
 
-- name: Remove repo
-  file:
-    path: /tmp/base16-xfce4-terminal
-    state: absent
+# - name: Remove repo
+#   file:
+#     path: /tmp/base16-xfce4-terminal
+#     state: absent

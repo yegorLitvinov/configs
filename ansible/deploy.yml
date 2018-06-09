@@ -1,4 +1,4 @@
 - hosts: all
   roles:
-    # - applications
+    - applications
     - configs

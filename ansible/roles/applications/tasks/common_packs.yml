@@ -11,9 +11,7 @@
     - wget
     - mc
     - tmux
-    - xfce4-clipman
-    - xfce4-clipman-plugin
-    - thunar-dropbox-plugin
+    - clipit
     - xsel
     - httpie
     - redshift-gtk
@@ -25,10 +23,8 @@
   action: apt name={{ item }}
   with_items:
     - sqlite
-    - meld
-    - postgresql-9.5
-    - postgresql-server-dev-9.5
-    - postgresql-client-9.5
+    # - meld
+    - postgresql-client
     - libxml2-dev
     - libxslt-dev
     - chromium-chromedriver
@@ -39,10 +35,14 @@
     - direnv
     - virtualbox
     - sshpass
-#   - vagrant from http://*.deb (:
     - pwgen
+
+- name: Vagrant
+  become: yes
+  apt:
+    deb: 'https://releases.hashicorp.com/vagrant/{{ vagrant_version }}/vagrant_{{ vagrant_version }}_x86_64.deb'
 
 - name: Install tmux plugin manager
   git:
     repo: https://github.com/tmux-plugins/tpm.git
-    dest: ~/.tmux/plugins/tpm
+    dest: '{{ home }}/.tmux/plugins/tpm'

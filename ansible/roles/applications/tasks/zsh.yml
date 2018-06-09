@@ -8,7 +8,7 @@
   become: yes
   shell: usermod -s /bin/zsh {{ username }}
 
-- name: Clone zsh repo
+- name: Clone oh-my-zsh repo
   git:
     repo: git://github.com/robbyrussell/oh-my-zsh.git
-    dest: ~/.oh-my-zsh
+    dest: '{{ home }}/.oh-my-zsh'

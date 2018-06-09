@@ -1,12 +1,13 @@
 - name: Add python3.6 repo
   become: yes
   apt_repository:
+    codename: '{{ ubuntu_release }}'  
     repo: 'ppa:jonathonf/python-3.6'
 
 - name: Install packages
   become: yes
   apt:
-    name: "{{ item }}"
+    name: '{{ item }}'
     update_cache: yes
   with_items:
     - python-iniparse

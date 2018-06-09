@@ -1,5 +1,5 @@
-## Quick instalation of all necessary packages in Ubuntu(Mint) with Xfce
+## Quick instalation of all necessary packages in Linux Mint x86_64
 ```bash
-ansible ansible-test -m ping -i hosts
-ansible-playbook deploy.yml --ask-become-pass
+ansible localhost -m ping -i ansible/hosts
+make deploy
 ```

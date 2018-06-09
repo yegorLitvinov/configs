@@ -1,14 +1,17 @@
-- name: Download Insomnia
-  get_url:
-    url: https://builds.insomnia.rest/downloads/ubuntu/latest
-    dest: /tmp/insomnia.deb
+- name: Add insomnia apt
+  become: yes
+  apt_repository:
+    repo: deb http://archive.canonical.com/ubuntu hardy partner
+    state: present
 
-- name: Install Insomnia
+- name: Add insomnia apt key
+  become: yes
+  apt_key:
+    url: https://insomnia.rest/keys/debian-public.key.asc
+    state: present
+
+- name: Install insomnia
   become: yes
   apt:
-    deb: /tmp/insomnia.deb
-
-- name: Delete deb
-  file:
-    path: /tmp/insomnia.deb
-    state: absent
+    update_cache: yes
+    name: insomnia

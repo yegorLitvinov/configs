@@ -1,40 +1,20 @@
 - name: Create fonts dir
   file:
-    path: ~/.fonts
+    path: '{{ home }}/.fonts'
     state: directory
     mode: 0755
 
-- name: Download Fira Code font
-  get_url:
-    url: https://codeload.github.com/tonsky/FiraCode/zip/master
-    dest: /tmp/firacode.zip
-
-- name: Unpack archive
+- name: Fira Code font
   unarchive:
-    src: /tmp/firacode.zip
-    dest: ~/.fonts/
+    src: https://codeload.github.com/tonsky/FiraCode/zip/master
+    dest: '{{ home }}/.fonts'
+    remote_src: yes
 
-- name: Delete archive
-  file:
-    path: /tmp/firacode.zip
-    state: absent
-
-- name: Download Source Code Pro font
-  get_url:
-    url: https://codeload.github.com/adobe-fonts/source-code-pro/zip/2.030R-ro/1.050R-it
-    dest: /tmp/source_code_pro.zip
-
-- name: Unpack archive
+- name: Source code pro
   unarchive:
-    src: /tmp/source_code_pro.zip
-    dest: ~/.fonts/
-
-- name: Delete archive
-  file:
-    path: /tmp/source_code_pro.zip
-    state: absent
+    src: https://codeload.github.com/adobe-fonts/source-code-pro/zip/variable-fonts
+    dest: '{{ home }}/.fonts/'
+    remote_src: yes
 
 - name: Rebuild font cache
   command: fc-cache
-  tags:
-    - fonts

@@ -18,5 +18,5 @@
 - name: Create symlink
   file:
     src: /usr/share/pycharm-community-2017.2.3/bin/pycharm.sh
-    dest: ~/.local/bin/pycharm
+    dest: '{{ home }}/.local/bin/pycharm'
     state: link
