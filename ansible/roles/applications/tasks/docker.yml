@@ -37,5 +37,13 @@
   apt:
     name: '{{ item }}'
   with_items:
-    - docker
+    - docker.io
     - docker-compose
+
+- name: Add docker group
+  become: yes
+  become_user: root
+  user:
+    name: '{{ user }}'
+    groups: docker
+    append: yes
