@@ -152,3 +152,13 @@ window-manager-launcher
 grep . /sys/devices/system/cpu/vulnerabilities/*
 ```
 To turn patch off put `spectre_v2=off pti=off` into `/etc/default/grub`
+
+## SSD on linux
+First of all make sure that your SSD supports trim:
+```
+sudo hdparm -I /dev/sda | grep TRIM
+```
+Run `fstrim -v <mountpoint>` periodically or add `discard` and `relatime` flags to `/etc/fstab/`:
+```
+/dev/mapper/mint--vg-root / ext4 relatime,discard,errors=remount-ro 0 1
+```
