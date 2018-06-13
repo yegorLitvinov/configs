@@ -6,6 +6,9 @@ shelve=
 mq =
 color =
 pager =
+rebase =
+strip =
+purge =
 
 [merge-tools]
 p4.priority = 60
@@ -19,3 +22,6 @@ p4.binary = False
 [ui]
 username = Egor Litvinov
 editor = vim
+
+[hooks]
+#preoutgoing.subrepos = make hook-preoutgoing-subrepos
