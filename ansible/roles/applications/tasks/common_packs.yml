@@ -38,6 +38,7 @@
     - virtualbox
     - sshpass
     - pwgen
+    - python3.6-dev
 
 - name: Vagrant
   become: yes

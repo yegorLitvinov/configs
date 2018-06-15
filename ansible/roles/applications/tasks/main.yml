@@ -4,7 +4,6 @@
 # - include: p4merge.yml
 # - include: php.yml
 # - include: pycharm.yml
-# - include: python36.yml
 # - include: sublime.yml
 # - include: tilix.yml
 
