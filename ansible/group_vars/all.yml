@@ -1,6 +1,7 @@
 user: egor
 home: '/home/{{ user }}'
 ubuntu_release: bionic
+docker_compose_version: 1.23.0-rc3
 
 # Software versions
 vagrant_version: '2.1.1'
