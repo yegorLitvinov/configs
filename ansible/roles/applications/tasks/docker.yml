@@ -37,8 +37,18 @@
   apt:
     name: '{{ item }}'
   with_items:
-    - docker.io
-    - docker-compose
+    - docker-ce
+    
+- name: Install Docker Compose
+  become: yes
+  become_user: root
+  get_url:
+    url: "https://github.com/docker/compose/releases/download/{{ docker_compose_version }}/docker-compose-Linux-x86_64"
+    dest: "/usr/local/bin/docker-compose"
+    force: true
+    owner: "root"
+    group: "root"
+    mode: "0755"
 
 - name: Add docker group
   become: yes
