@@ -163,7 +163,7 @@ Run `fstrim -v <mountpoint>` periodically or add `discard` and `relatime` flags 
 /dev/mapper/mint--vg-root / ext4 relatime,discard,errors=remount-ro 0 1
 ```
 
-## Redshift doesn't work with geclue provider
+## Redshift doesn't work with geoclue provider
 Manually set lat:lng
 ```
 redshift -l 55:37
