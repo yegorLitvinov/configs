@@ -4,6 +4,4 @@
   action: apt name={{ item }}
   with_items:
     - git
-    - mercurial
-    - tortoisehg
     - tig

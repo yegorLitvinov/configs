@@ -12,9 +12,9 @@
     - wget
     - mc
     - tmux
-    - clipit
-    - xsel
-    - httpie
+    - gpaste
+    # - xsel
+    # - httpie
     - redshift-gtk
     - geoclue-2.0
     - apt-file
@@ -32,21 +32,22 @@
     - chromium-chromedriver
     - build-essential
     - libssl-dev
-    - virtualenv
-    - virtualenvwrapper
+    # - virtualenv
+    # - virtualenvwrapper
     - direnv
     - virtualbox
     - sshpass
     - pwgen
-    - python3.6-dev
-
-- name: Vagrant
-  become: yes
-  become_user: root
-  apt:
-    deb: 'https://releases.hashicorp.com/vagrant/{{ vagrant_version }}/vagrant_{{ vagrant_version }}_x86_64.deb'
 
 - name: Install tmux plugin manager
   git:
     repo: https://github.com/tmux-plugins/tpm.git
     dest: '{{ home }}/.tmux/plugins/tpm'
+
+- name: Install snap packages
+  become: yes
+  become_user: root
+  command: "snap install {{ item }}"
+  with_items:
+    - vscode
+    - insomnia

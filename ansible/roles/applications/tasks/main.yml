@@ -6,14 +6,13 @@
 # - include: pycharm.yml
 # - include: sublime.yml
 # - include: tilix.yml
+# - include: themes.yml
+# - include: vscode.yml
 
 - include: common_packs.yml
 - include: docker.yml
 - include: fonts.yml
 - include: golang.yml
-- include: insomnia.yml
 - include: nodejs.yml
-- include: themes.yml
 - include: vcs.yml
-- include: vscode.yml
 - include: zsh.yml

@@ -2,18 +2,25 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/egor/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
-# Set name of the theme to load. Optionally, if you set this to "random"
-# it'll load a random theme each time that oh-my-zsh is loaded.
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="robbyrussell"
+
+# Set list of themes to pick from when loading at random
+# Setting this variable when ZSH_THEME=random will cause zsh to load
+# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
+# If set to an empty array, this variable will have no effect.
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
-# Uncomment the following line to use hyphen-insensitive completion. Case
-# sensitive completion must be off. _ and - will be interchangeable.
+# Uncomment the following line to use hyphen-insensitive completion.
+# Case-sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
@@ -41,17 +48,24 @@ ZSH_THEME="robbyrussell"
 
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
-# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# You can set one of the optional three formats:
+# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# or set a custom format using the strftime function format specifications,
+# see 'man strftime' for details.
 # HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Which plugins would you like to load?
+# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git mercurial)
+plugins=(
+  git
+)
+
 
 source $ZSH/oh-my-zsh.sh
 
@@ -84,47 +98,29 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-ZSH_THEME_HG_PROMPT_PREFIX="%{$fg_bold[magenta]%}hg:(%{$fg[red]%}"
-ZSH_THEME_HG_PROMPT_SUFFIX="%{$reset_color%}"
-ZSH_THEME_HG_PROMPT_DIRTY="%{$fg[magenta]%}) %{$fg[yellow]%}✗%{$reset_color%}"
-ZSH_THEME_HG_PROMPT_CLEAN="%{$fg[magenta]%})"
-
-PROMPT='${ret_status}%{$fg_bold[green]%}%p %{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)$(hg_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
-
-alias dar="django-admin runserver"
-alias dar+="django-admin runserver_plus"
-alias dardb="django-admin reset_db --noinput"
-alias da+="django-admin shell_plus"
-alias damm="django-admin makemigrations"
-alias dam="django-admin migrate"
-alias da="django-admin"
-
 SAVEHIST=2000
 setopt HIST_IGNORE_ALL_DUPS      # Delete old recorded entry if new entry is a duplicate.
 
-source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
+# Paths
+export PATH=$PATH:~/.local/bin/
+export PATH=$PATH:/usr/local/go/bin/
+export PATH=$PATH:~/go/bin/
+export PATH=$PATH:~/.config/yarn/global/node_modules/.bin/
+export PATH=$PATH:~/.yarn/bin/
 
-# You may also like to add aliases to your shell config,
-# that way the hook won't be run on shelve/unshelve:
-alias hgunshelve='hg unshelve --config hooks.pretxncommit.precommit='
-alias hgshelve='hg shelve --config hooks.pretxncommit.precommit='
+# Direnv
+_direnv_hook() {
+  eval "$(direnv export zsh)";
+}
+typeset -ag precmd_functions;
+if [[ -z ${precmd_functions[(r)_direnv_hook]} ]]; then
+  precmd_functions+=_direnv_hook;
+fi
 
-alias dm='docker-machine'
-alias dc='docker-compose'
+# Aliases
+alias dc=docker-compose
+alias da=django-admin
+alias l=ls -lah
+
+# Other
 export ANSIBLE_NOCOWS=1
-
-eval "$(direnv hook zsh)"
-# eval $(thefuck --alias)
-export PATH=$PATH:~/.config/yarn/global/node_modules/.bin
-if [ -d "$HOME/.local/bin" ] ; then
-  PATH="$PATH:$HOME/.local/bin"
-fi
-
-if [ -d "$HOME/.yarn/bin" ] ; then
-  PATH="$PATH:$HOME/.yarn/bin"
-fi
-
-alias l="ls -lah"
-
-export PATH=~/.config/yarn/global/node_modules/.bin:$PATH
-export PATH=~/.local/go/bin:$PATH
