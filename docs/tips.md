@@ -168,3 +168,11 @@ Manually set lat:lng
 ```
 redshift -l 55:37
 ```
+
+## Check if touchpad supports multitouch
+Check the output of the command
+```
+xinput --list-props 11
+```
+where `11` is the random number (it's not accorded with `lsinput`) which you need to find yourself.
+

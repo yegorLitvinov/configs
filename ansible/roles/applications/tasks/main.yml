@@ -16,3 +16,4 @@
 - include: nodejs.yml
 - include: vcs.yml
 - include: zsh.yml
+- include: gestures.yml

@@ -1,0 +1,37 @@
+- name: Add input group
+  become: yes
+  become_user: root
+  user:
+    name: '{{ user }}'
+    groups: input
+    append: yes
+
+- name: Install packages
+  become: yes
+  become_user: root
+  apt:
+    name:
+      - xdotool
+      - wmctrl
+      - libinput-tools
+      
+- name: Clone libinput-gestures
+  git:
+    repo: https://github.com/bulletmark/libinput-gestures.git
+    dst: '{{ home_dir }}/.tmp/libinput-gestures/'
+    depth: 1
+
+- name: Install libinput-gestures
+  become: yes
+  become_user: root
+  make:
+    chdir: '{{ home_dir }}/.tmp/libinput-gestures/'
+    args: install
+
+- name: Start libinput-gestures
+  command: "libinput-gestures-setup autostart && libinput-gestures-setup start"
+
+- name: Copy gestures config
+  file:
+      name: libinput-gestures.conf
+      dst: '{{ home_dir }}/.confing/libinput-gestures.conf'

@@ -124,3 +124,6 @@ alias l=ls -lah
 
 # Other
 export ANSIBLE_NOCOWS=1
+
+# <C-s> prevent terminal to updating. Do disable this behaviour:
+stty -ixon

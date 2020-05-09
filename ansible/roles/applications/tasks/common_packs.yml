@@ -1,9 +1,8 @@
 - name: Install utils packages
   become: yes
   become_user: root
-  action: apt name={{ item }}
-  with_items:
-    - vim
+  apt:
+    name:
     - htop
     - iotop
     - chromium-browser
@@ -13,27 +12,25 @@
     - mc
     - tmux
     - gpaste
-    # - xsel
-    # - httpie
+    - xsel
     - redshift-gtk
     - geoclue-2.0
     - apt-file
+    - snapd
+    - lm-sensors
 
 - name: Install development packages
   become: yes
   become_user: root
-  action: apt name={{ item }}
-  with_items:
+  apt:
+    names:
     - sqlite
-    # - meld
     - postgresql-client
     - libxml2-dev
     - libxslt-dev
     - chromium-chromedriver
     - build-essential
     - libssl-dev
-    # - virtualenv
-    # - virtualenvwrapper
     - direnv
     - virtualbox
     - sshpass
@@ -43,11 +40,23 @@
   git:
     repo: https://github.com/tmux-plugins/tpm.git
     dest: '{{ home }}/.tmux/plugins/tpm'
+    depth: 1
 
 - name: Install snap packages
   become: yes
   become_user: root
-  command: "snap install {{ item }}"
-  with_items:
-    - vscode
-    - insomnia
+  snap:
+    name:
+      - vscode
+      - insomnia
+    classic: yes
+
+- name: Clone fzf
+  git:
+    repo: https://github.com/junegunn/fzf.git 
+    dest: '{{ home }}/.fzf'
+    depth: 1
+
+- name: Install fzf
+  command: '{{ home }}/.fzf/install'
+
