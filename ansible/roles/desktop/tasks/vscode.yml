@@ -1,0 +1,15 @@
+- name: Install snap packages
+  become: yes
+  become_user: root
+  snap:
+    name:
+      - code
+    classic: yes
+
+- name: copy vscode settings
+  copy:
+    src: settings.json
+    dest: "{{ home }}/.config/Code/User/settings.json"
+
+- name: install sshcode
+  command: "go get -u go.coder.com/sshcode"

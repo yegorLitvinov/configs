@@ -1,4 +1,0 @@
-- name: Copy hidden configs into user dir
-  copy:
-    src: ../../../configs/
-    dest: '{{ home }}/'

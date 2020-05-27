@@ -1,0 +1,5 @@
+- hosts: server
+  become: yes
+  become_user: '{{ user }}'
+  roles:
+    - common

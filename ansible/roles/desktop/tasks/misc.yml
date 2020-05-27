@@ -1,0 +1,17 @@
+- name: Install development packages
+  become: yes
+  become_user: root
+  apt:
+    names:
+    - indicator-cpufreq
+    - redshift-gtk
+    - geoclue-2.0
+    - virtualbox
+
+- name: Install snap packages
+  become: yes
+  become_user: root
+  snap:
+    name:
+      - insomnia
+    classic: yes

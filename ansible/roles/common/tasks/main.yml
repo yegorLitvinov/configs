@@ -1,0 +1,7 @@
+- include: git.yml
+- include: misc.yml
+- include: docker.yml
+- include: nodejs.yml
+- include: vim.yml
+- include: zsh.yml
+- include: golang.yml

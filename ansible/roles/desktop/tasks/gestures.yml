@@ -6,7 +6,7 @@
     groups: input
     append: yes
 
-- name: Install packages
+- name: Install packages for gestures
   become: yes
   become_user: root
   apt:
@@ -18,14 +18,14 @@
 - name: Clone libinput-gestures
   git:
     repo: https://github.com/bulletmark/libinput-gestures.git
-    dst: '{{ home_dir }}/.tmp/libinput-gestures/'
+    path: '{{ home }}/.tmp/libinput-gestures/'
     depth: 1
 
 - name: Install libinput-gestures
   become: yes
   become_user: root
   make:
-    chdir: '{{ home_dir }}/.tmp/libinput-gestures/'
+    chdir: '{{ home }}/.tmp/libinput-gestures/'
     args: install
 
 - name: Start libinput-gestures
@@ -34,4 +34,4 @@
 - name: Copy gestures config
   file:
       name: libinput-gestures.conf
-      dst: '{{ home_dir }}/.confing/libinput-gestures.conf'
+      path: '{{ home }}/.confing/libinput-gestures.conf'

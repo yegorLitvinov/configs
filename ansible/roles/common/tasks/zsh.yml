@@ -1,8 +1,13 @@
+- name: Copy .zshrc
+  copy:
+    src: .zshrc
+    dest: "{{ home}}/.zshrc"
+
 - name: Install zsh
   become: yes
   become_user: root
-  action: apt name={{ item }}
-  with_items:
+  apt:
+    name: 
     - zsh
 
 - name: Change default shell

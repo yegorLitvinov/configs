@@ -1,2 +1,4 @@
-deploy:
-	cd ansible && ANSIBLE_NOCOWS=1 ansible-playbook -i hosts deploy.yml --ask-become-pass
+deploy-desktop:
+	cd ansible && ansible-playbook -i hosts desktop.yml --ask-become-pass
+deploy-server:
+	cd ansible && ansible-playbook -i hosts server.yml --ask-become-pass

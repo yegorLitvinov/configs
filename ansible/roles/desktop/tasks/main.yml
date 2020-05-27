@@ -1,0 +1,7 @@
+- include: misc.yml
+- include: vscode.yml
+- include: tmux.yml
+# - include: gestures.yml
+# - include: p4merge.yml
+# - include: themes.yml
+# - include: fonts.yml

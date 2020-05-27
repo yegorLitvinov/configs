@@ -1,0 +1,53 @@
+{
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "workbench.iconTheme": "vscode-icons",
+    "python.jediEnabled": false,
+    "explorer.confirmDelete": false,
+    "search.searchOnType": false,
+    "window.zoomLevel": 0,
+    "git.autofetch": true,
+    "gitlens.codeLens.authors.enabled": false,
+    "gitlens.codeLens.recentChange.enabled": false,
+    "files.exclude": {
+        "**/.mypy_cache/**": true,
+        "**/.pytest_cache/**": true,
+        "**/__pycache__/**": true,
+        "**/devdist/**": true,
+        "**/node_modules/**": true
+    },
+    "files.watcherExclude": {
+        "**/.mypy_cache/**": true,
+        "**/.pytest_cache/**": true,
+        "**/__pycache__/**": true,
+        "**/devdist/**": true,
+        "**/node_modules/**": true
+    },
+    "search.exclude": {
+        "**/.mypy_cache/**": true,
+        "**/.pytest_cache/**": true,
+        "**/__pycache__/**": true,
+        "**/devdist/**": true,
+        "**/node_modules/**": true
+    },
+    "python.formatting.provider": "black",
+    "python.formatting.blackPath": "/Users/egor/Library/Python/3.7/bin/black",
+    "git.confirmSync": false,
+    "[vue]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "python.linting.flake8Path": "/Users/egor/Library/Python/3.7/bin/flake8",
+    "python.linting.flake8Enabled": true,
+    "workbench.colorTheme": "One Dark Pro",
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "files.trimTrailingWhitespace": true,
+    "extensions.ignoreRecommendations": true,
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "search.quickOpen.history.filterSortOrder": "recency"
+}

@@ -16,11 +16,11 @@
   become_user: root
   apt:
     update_cache: yes
-    name: '{{ item }}'
-  with_items:
+    name:
     - numix-gtk-theme
     - numix-icon-theme-circle
 
+# TODO: Themes for other terminals
 # - name: Clone base16 xfce terminal themes
 #   shell: bash -c 'git clone https://github.com/afg984/base16-xfce4-terminal'
 #   args:

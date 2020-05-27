@@ -1,7 +1,0 @@
-- hosts: all
-  become: yes
-  become_user: '{{ user }}'
-  roles:
-    - applications
-    - configs
-    - vim

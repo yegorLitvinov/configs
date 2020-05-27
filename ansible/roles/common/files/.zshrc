@@ -102,9 +102,12 @@ SAVEHIST=2000
 setopt HIST_IGNORE_ALL_DUPS      # Delete old recorded entry if new entry is a duplicate.
 
 # Paths
-export PATH=$PATH:~/.local/bin/
+# Different go instalations
+export PATH=$PATH:~/.local/go/bin/
 export PATH=$PATH:/usr/local/go/bin/
 export PATH=$PATH:~/go/bin/
+# Other
+export PATH=$PATH:~/.local/bin/
 export PATH=$PATH:~/.config/yarn/global/node_modules/.bin/
 export PATH=$PATH:~/.yarn/bin/
 

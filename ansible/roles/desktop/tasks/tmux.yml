@@ -1,0 +1,18 @@
+- name: Install tmux packages
+  become: yes
+  become_user: root
+  apt:
+    name:
+    - tmux
+    - xclip
+
+- name: Copy config
+  copy:
+    src: .tmux.conf
+    dest: '{{ home }}/.tmux.conf'
+
+- name: Install tmux plugin manager
+  git:
+    repo: https://github.com/tmux-plugins/tpm.git
+    dest: '{{ home }}/.tmux/plugins/tpm'
+    depth: 1
