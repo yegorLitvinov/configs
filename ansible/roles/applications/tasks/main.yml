@@ -1,11 +1,4 @@
-# Do not need it (may be outdated, I checked them a long time ago)
-# - include: dbeaver.yml
-# - include: dropbox.yml
 # - include: p4merge.yml
-# - include: php.yml
-# - include: pycharm.yml
-# - include: sublime.yml
-# - include: tilix.yml
 # - include: themes.yml
 # - include: vscode.yml
 
