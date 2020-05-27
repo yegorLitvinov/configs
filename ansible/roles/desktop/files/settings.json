@@ -31,7 +31,7 @@
         "**/node_modules/**": true
     },
     "python.formatting.provider": "black",
-    "python.formatting.blackPath": "/Users/egor/Library/Python/3.7/bin/black",
+    "python.formatting.blackPath": "~/.local/bin/black",
     "git.confirmSync": false,
     "[vue]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -39,7 +39,7 @@
     "[javascript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "python.linting.flake8Path": "/Users/egor/Library/Python/3.7/bin/flake8",
+    "python.linting.flake8Path": "flake8",
     "python.linting.flake8Enabled": true,
     "workbench.colorTheme": "One Dark Pro",
     "files.insertFinalNewline": true,

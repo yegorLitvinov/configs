@@ -25,12 +25,34 @@
     - pwgen
     - python3-dev
     - python3-pip
+    - postgresql-common
+    - libpq-dev
+    - unzip
 
 - name: Clone fzf
   git:
-    repo: https://github.com/junegunn/fzf.git 
+    repo: https://github.com/junegunn/fzf.git
     dest: '{{ home }}/.fzf'
     depth: 1
 
 - name: Install fzf
   command: '{{ home }}/.fzf/install --completion --key-bindings --update-rc'
+
+- name: Install python packages
+  pip:
+    executable: pip3
+    name:
+      - pipenv
+      - black
+      - virtualenv
+    extra_args: --user
+
+
+- name: Download awscli version 1
+  unarchive:
+    src: https://s3.amazonaws.com/aws-cli/awscli-bundle.zip
+    dest: /tmp/awscli-bundle
+    remote_src: yes
+
+- name: Install awscli
+  command: /tmp/awscli-bundle/install -b {{ home }}/.local/bin
