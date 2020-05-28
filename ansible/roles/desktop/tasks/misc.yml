@@ -14,4 +14,5 @@
   snap:
     name:
       - insomnia
+      - telegram-desktop
     classic: yes

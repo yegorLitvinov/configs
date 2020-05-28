@@ -14,9 +14,9 @@ set history=1000
  if has("autocmd")
    au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
  endif
- 
+
 " Command to find using ripgrep
-:nmap <c-f> :Rg 
+:nmap <c-f> :Rg
 :imap <c-f> <Esc>:Rg
 
 " CTRL-S to save

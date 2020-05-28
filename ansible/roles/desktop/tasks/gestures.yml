@@ -14,7 +14,7 @@
       - xdotool
       - wmctrl
       - libinput-tools
-      
+
 - name: Clone libinput-gestures
   git:
     repo: https://github.com/bulletmark/libinput-gestures.git

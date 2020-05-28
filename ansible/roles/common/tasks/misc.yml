@@ -5,6 +5,9 @@
     name:
     - htop
     - iotop
+    # TODO:
+    # Sometimes live tests are fails in chromium
+    # Installing google-chrome helps
     - chromium-browser
     - chromium-chromedriver
     - curl
@@ -28,6 +31,7 @@
     - postgresql-common
     - libpq-dev
     - unzip
+    - imagemagick
 
 - name: Clone fzf
   git:

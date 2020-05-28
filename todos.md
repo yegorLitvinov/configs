@@ -1,4 +1,2 @@
-- Move configs in tempaltes
-- All variables (version, etc) should be in `all.yml`
+- All variables (versions, emails, full name, etc) should be in `all.yml`
 - Checksum for all downloads?
-- Apt can work with array of packages

@@ -49,5 +49,7 @@
     "[json]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
+    "window.menuBarVisibility": "hidden",
+    "python.envFile": "${workspaceFolder}/.environ",
     "search.quickOpen.history.filterSortOrder": "recency"
 }
