@@ -40,3 +40,11 @@
 
 - name: Install fzf
   command: '{{ home }}/.fzf/install --completion --key-bindings --update-rc'
+
+- name: Configure max user watches
+  become: yes
+  become_user: root
+  sysctl:
+    name: fs.inotify.max_user_watches
+    value: '524288'
+    state: present
