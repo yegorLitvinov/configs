@@ -1,2 +1,2 @@
 localhost ansible_connection=local ansible_python_interpreter=python3
-server ansible_user=egor ansible_host=49.12.108.210 ansible_python_interpreter=python3
+server ansible_user=egor ansible_host=work ansible_python_interpreter=python3
