@@ -32,4 +32,4 @@
     remote_src: yes
 
 - name: Install awscli
-  command: /tmp/awscli-bundle/install -b {{ home }}/.local/bin/awscli
+  command: /tmp/awscli-bundle/install -b {{ home }}/.local/bin/aws

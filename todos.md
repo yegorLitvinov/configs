@@ -1,2 +1,2 @@
 - All variables (versions, emails, full name, etc) should be in `all.yml`
-- Checksum for all downloads?
+- different tmux configs for server and desktop

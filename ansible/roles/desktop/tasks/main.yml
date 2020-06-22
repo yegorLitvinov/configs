@@ -1,6 +1,7 @@
 - include: misc.yml
 - include: vscode.yml
 - include: tmux.yml
+- include: telegram.yml
 # - include: gestures.yml
 # - include: p4merge.yml
 # - include: themes.yml

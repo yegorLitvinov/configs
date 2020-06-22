@@ -1,0 +1,10 @@
+- file:
+    path: '{{ home }}/.local/'
+    state: directory
+    mode: 0755
+
+- name: Download and extract telegram
+  unarchive:
+    src: 'https://telegram.org/dl/desktop/linuxhttps://telegram.org/dl/desktop/linux'
+    dest: '{{ home }}/.local/'
+    remote_src: yes
