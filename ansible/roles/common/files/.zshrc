@@ -68,6 +68,7 @@ plugins=(
 
 
 source $ZSH/oh-my-zsh.sh
+source ~/.nix-profile/etc/profile.d/nix.sh
 
 # User configuration
 
@@ -110,6 +111,7 @@ export PATH=$PATH:~/go/bin/
 export PATH=$PATH:~/.local/bin/
 export PATH=$PATH:~/.config/yarn/global/node_modules/.bin/
 export PATH=$PATH:~/.yarn/bin/
+export PATH=$PATH:~/Library/Python/3.8/bin/
 
 # Direnv
 _direnv_hook() {
